@@ -1,8 +1,8 @@
 {
-    "name": "devtoolscz/discord-revoke-token",
+    "name": "devtoolcz/discord-revoke-token",
     "description": "OAUTH2 Revoking Token for Discord.",
     "type": "library",
-    "license": "GNU",
+    "license": ["MIT", "GPL-3.0"],
     "authors": [
         {
             "name": "Patrik Kolařík",
