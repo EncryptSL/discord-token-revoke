@@ -45,7 +45,7 @@ class DiscordRevoke implements IRevokeRequest
 
     public function sendRevokeRequest(string $url)
     {
-        return $this->createCurlRequest($url, $this->getHeaders(), $this->getToken());
+        return $this->curlClient($url, $this->getHeaders(), $this->getAccessData());
     }
 
     public function getHeaders() {
