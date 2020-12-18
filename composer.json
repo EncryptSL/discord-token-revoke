@@ -1,5 +1,5 @@
 {
-    "name": "encryptsl/discord-revoke-token",
+    "name": "devtoolscz/discord-revoke-token",
     "description": "OAUTH2 Revoking Token for Discord.",
     "type": "library",
     "license": "GNU",
