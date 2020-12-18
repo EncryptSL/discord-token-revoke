@@ -10,15 +10,15 @@ Recommended way to install is via composer.
 
 ```yaml
 extensions:
-	dcrevoke: Discord\EncryptSL\DCRevokeExtension
+    dcrevoke: Discord\EncryptSL\DCRevokeExtension
 ```
 
 **Configuration**
 ```yaml
 dcrevoke:
-	clientId: your discord application id
-	clientSecret: your discord application secret key
-	api_url: 'https://discord.com/api/v8'
+    clientId: your discord application id
+    clientSecret: your discord application secret key
+    api_url: 'https://discord.com/api/v8'
 ```
 **Usage**
 ```php
