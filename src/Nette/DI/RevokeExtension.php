@@ -33,8 +33,7 @@ final class RevokeExtension extends CompilerExtension
         $configData = [
 			'client_id' => $config->clientId,
 			'client_secret' => $config->clientSecret,
-            'api_url' => $config->revoke_api_url,
-            'api_revoke_url' => $config->api_revoke_url
+            'api_url' => $config->api_url,
 		];
 
 		$builder->addDefinition($this->prefix('discordRevoke'))
