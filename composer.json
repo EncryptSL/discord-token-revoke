@@ -1,0 +1,23 @@
+{
+    "name": "encryptsl/discord-revoke-token",
+    "description": "OAUTH2 Revoking Token for Discord.",
+    "type": "library",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Patrik Kolařík",
+            "email": "rydlos123@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Discord\\EncryptSL\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "nette/di": "~3.0.0",
+        "ext-curl": "*"
+     }
+}
