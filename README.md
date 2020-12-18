@@ -1,4 +1,4 @@
-### devtoolscz/discord-revoke-token
+### devtoolscz/discordtokenrevoke
 
 **Introduction**
 Discord Revoke token is a small library for revoking token.
@@ -10,12 +10,12 @@ Recommended way to install is via composer.
 
 ```yaml
 extensions:
-    dcrevoke: Discord\EncryptSL\DCRevokeExtension
+	revoke: Devtoolcz\Discordtokenrevoke\Nette\DI\RevokeExtension
 ```
 
 **Configuration**
 ```yaml
-dcrevoke:
+revoke:
     clientId: your discord application id
     clientSecret: your discord application secret key
     api_url: 'https://discord.com/api/v8'
@@ -23,7 +23,7 @@ dcrevoke:
 **Usage**
 ```php
 use Nette;
-use Discord\EncryptSL\DiscordRevoke;
+use Devtoolcz\DiscordRevoke;
 
 final class ExamplePresenter extends Nette\Application\UI\Presenter
 {
