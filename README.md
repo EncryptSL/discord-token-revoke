@@ -6,7 +6,7 @@ Example when user logout from page, we must revoke old token, for preventing lea
 
 **Setup**
 Recommended way to install is via composer.
-> composer require devtoolscz/discord-revoke-token
+> composer require devtoolcz/discordtokenrevoke
 
 ```yaml
 extensions:
