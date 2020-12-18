@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Discord\EncryptSL\Interfaces;
+namespace Devtoolcz\Discordtokenrevoke\Interfaces;
 
 interface IRevokeRequest {
    public function curlClient(string $url, array $headers, array $data);

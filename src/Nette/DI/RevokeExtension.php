@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Discord\EncryptSL\DI;
+namespace Devtoolcz\Discordtokenrevoke\Nette\DI;
 
-use Discord\EncryptSL\DiscordRevoke;
+use Devtoolcz\Discordtokenrevoke\DiscordRevoke;
 use Nette\DI\CompilerExtension;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
@@ -13,7 +13,7 @@ use stdClass;
 /**
  * @property-read stdClass $config
  */
-class DCRevokeExtension extends CompilerExtension 
+final class RevokeExtension extends CompilerExtension 
 {
 
     public function getConfigSchema(): Schema

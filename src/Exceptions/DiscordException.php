@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Discord\EncryptSL\Exceptions;
+namespace Devtoolcz\Discordtokenrevoke\Exceptions;
 
 use RuntimeException;
 

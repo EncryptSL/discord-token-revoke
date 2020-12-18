@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Discord\EncryptSL;
+namespace Devtoolcz\Discordtokenrevoke;
 
-use Discord\EncryptSL\Exceptions\DiscordException;
-use Discord\EncryptSL\Interfaces\IRevokeRequest;
+use Devtoolcz\Discordtokenrevoke\Exceptions\DiscordException;
+use Devtoolcz\Discordtokenrevoke\Interfaces\IRevokeRequest;
 
 class DiscordRevoke implements IRevokeRequest
 {

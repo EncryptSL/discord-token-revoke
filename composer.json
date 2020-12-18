@@ -1,5 +1,5 @@
 {
-    "name": "devtoolcz/discord-revoke-token",
+    "name": "devtoolcz/discordtokenrevoke",
     "description": "OAUTH2 Revoking Token for Discord.",
     "type": "library",
     "license": ["MIT", "GPL-3.0"],
@@ -9,11 +9,12 @@
             "email": "rydlos123@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Discord\\EncryptSL\\": "src"
+          "Devtoolcz\\Discordtokenrevoke\\": "src"
         }
-    },
+      },
     "require": {
         "php": ">=7.2",
         "nette/di": "~3.0.0",
