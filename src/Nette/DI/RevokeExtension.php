@@ -31,8 +31,8 @@ final class RevokeExtension extends CompilerExtension
         $config = $this->config;
 
         $configData = [
-			'client_id' => $config->clientId,
-			'client_secret' => $config->clientSecret,
+			'clientId' => $config->clientId,
+			'clientSecret' => $config->clientSecret,
             'api_url' => $config->api_url,
 		];
 

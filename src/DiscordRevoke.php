@@ -77,7 +77,7 @@ class DiscordRevoke implements IRevokeRequest
     
     public function getEncodedCredentials()
     {
-        return base64_encode(sprintf('%s:%s', $this->clientId, $this->clientSecret));
+        return base64_encode(sprintf('%s:%s', $this->config['clientId'], $this->config['clientSecret']));
     }
     
 }
