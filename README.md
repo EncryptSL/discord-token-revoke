@@ -1,8 +1,9 @@
 ### devtoolscz/discordtokenrevoke
 
 **Introduction**
-Discord Revoke token is a small library for revoking token.
+Discord Revoke token is a small library for revoking token only for Discord OAUTH2 Applications.
 Example when user logout from page, we must revoke old token, for preventing leaking tokens.
+Library is created for Nette Framework.
 
 **Setup**
 Recommended way to install is via composer.
@@ -23,7 +24,7 @@ revoke:
 **Usage**
 ```php
 use Nette;
-use Devtoolcz\DiscordRevoke;
+use Devtoolcz\Discordtokenrevoke\DiscordRevoke;
 
 final class ExamplePresenter extends Nette\Application\UI\Presenter
 {
