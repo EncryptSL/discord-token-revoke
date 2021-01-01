@@ -8,7 +8,7 @@ Library is created for Nette Framework.
 **VERSIONS**
 | STATE  | VERSION  | BRANCH  | NETTE | PHP |
 | :------------: | :------------: | :------------: | :------------: | :------------: |
-| Stable  | 1.6 | main | 3.0 | >=7.2  |
+| Stable  | 2.0 | main | 3.0 | >=7.2  |
 
 **Setup**
 Recommended way to install is via composer.
