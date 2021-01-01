@@ -48,8 +48,6 @@ class Client
         if ($httpcode >= 400)
             throw new DiscordException('Expected state code 200 but returned state code ' . $httpcode, $httpcode);
 
-        return bdump($response);
-
         curl_close($cUrl);
 	}
 

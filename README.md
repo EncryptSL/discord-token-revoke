@@ -39,8 +39,8 @@ final class ExamplePresenter extends Nette\Application\UI\Presenter
 
     public function actionDiscordLogout()
     {
-        $this->discordRevoke->setToken($this->user->identity->token);
-        $this->discordRevoke->sendRevokeRequest('/oauth2/token/revoke');
+        $this->discordRevoke->createRevokeRequest('/oauth2/token/revoke')
+            ->setToken('token here')->send();
     }
 }
 ```
