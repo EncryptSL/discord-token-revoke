@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -10,17 +10,16 @@ use Devtoolcz\Discordtokenrevoke\Interfaces\IRevokeRequest;
 class DiscordRevoke implements IRevokeRequest
 {
 
-    /** @var string[] */
-    private $config;
+	/** @var string[] */
+	private $config;
 
-    public function __construct(array $config) 
-    {
-        $this->config = $config;
-    }
+	public function __construct(array $config)
+	{
+		$this->config = $config;
+	}
 
-    public function createRevokeRequest(string $url)
-    {
-        return new Client($this->config['api_url'], $url, (int) $this->config['clientId'], $this->config['clientSecret']);
-    }
-    
+	public function createRevokeRequest(string $url)
+	{
+		return new Client($this->config['api_url'], $url, (int) $this->config['clientId'], $this->config['clientSecret']);
+	}
 }
