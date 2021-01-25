@@ -16,8 +16,8 @@
         }
       },
     "require": {
-        "php": ">=7.2",
-        "nette/di": "^3.0",
+        "php": ">=7.4",
+        "nette/di": "~3.0.0",
         "ext-curl": "*"
      },
      "extra": {

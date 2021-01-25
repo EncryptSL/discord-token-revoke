@@ -8,20 +8,15 @@ use Devtoolcz\Discordtokenrevoke\Exceptions\DiscordException;
 
 class Client
 {
-	/** @var string $api_url */
-	private $api_url;
+	private string $api_url;
 
-	/** @var string $url */
-	private $url;
+	private string $url;
 
-	/** @var string $token */
-	private $token;
+	private string $token;
 
-	/** @var int $clientId */
-	private $clientId;
+	private int $clientId;
 
-	/** @var string $clientSecretKey */
-	private $clientSecretKey;
+	private string $clientSecretKey;
 
 	public function __construct(string $api_url, string $url, int $clientId, string $clientSecretKey)
 	{
@@ -32,59 +27,61 @@ class Client
 	}
 
 	public function send()
-	{
-		$cUrl = curl_init($this->api_url . $this->url);
-		curl_setopt($cUrl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
-		curl_setopt($cUrl, CURLOPT_HEADER, true);
-		curl_setopt($cUrl, CURLOPT_POST, true);
-		curl_setopt($cUrl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($cUrl, CURLOPT_NOBODY, true);
-		curl_setopt($cUrl, CURLOPT_HTTPHEADER, $this->getHeaders());
-		curl_setopt($cUrl, CURLOPT_POSTFIELDS, $this->getAccessData());
+    {
+        $cUrl = curl_init($this->api_url. $this->url);
+        curl_setopt($cUrl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+        curl_setopt($cUrl, CURLOPT_HEADER, true);
+        curl_setopt($cUrl, CURLOPT_POST, true);
+        curl_setopt($cUrl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($cUrl, CURLOPT_NOBODY, true);
+        curl_setopt($cUrl, CURLOPT_HTTPHEADER, $this->getHeaders());
+        curl_setopt($cUrl, CURLOPT_POSTFIELDS, $this->getAccessData());
 
-		$response = curl_exec($cUrl);
-		$httpcode = curl_getinfo($cUrl, CURLINFO_HTTP_CODE);
+        $response = curl_exec($cUrl);
+        $httpcode = curl_getinfo($cUrl, CURLINFO_HTTP_CODE);
 
-		if ($httpcode >= 400)
-			throw new DiscordException('Expected state code 200 but returned state code ' . $httpcode, $httpcode);
+        if ($httpcode >= 400)
+            throw new DiscordException('Expected state code 200 but returned state code ' . $httpcode, $httpcode);
 
-		curl_close($cUrl);
+        return bdump($response);
+
+        curl_close($cUrl);
 	}
 
-	public function setToken(string $token)
+	public function setToken(string $token) 
 	{
 		$this->token = $token;
-
+		
 		return $this;
-	}
+    }
 
-	public function getHeaders()
+	protected function getHeaders() 
 	{
-		$headers = [
-			'Authorization' => 'Basic ' . $this->getEncodedCredentials(),
-			'Content-Type' => 'application/x-www-form-urlencoded',
-		];
+        $headers = [
+            'Authorization' => 'Basic ' . $this->getEncodedCredentials(),
+            'Content-Type' => 'application/x-www-form-urlencoded',
+        ];
 
-		return $headers;
-	}
+        return $headers;
+    }
 
-	public function getToken()
+    protected function getToken() 
+    {
+        return $this->token;
+    }
+
+	protected function getAccessData() 
 	{
-		return $this->token;
-	}
-
-	public function getAccessData()
-	{
-		$data = [
-			'token' => $this->getToken(),
-			'client_id' => $this->clientId,
-			'client_secret' => $this->clientSecretKey,
-		];
-		return $data;
-	}
-
-	public function getEncodedCredentials()
-	{
-		return base64_encode(sprintf('%s:%s', $this->clientId, $this->clientSecretKey));
-	}
+        $data = [
+            'token' => $this->getToken(),
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecretKey,
+        ];
+        return $data;
+    }
+    
+    protected function getEncodedCredentials()
+    {
+        return base64_encode(sprintf('%s:%s', $this->clientId, $this->clientSecretKey));
+    }
 }
