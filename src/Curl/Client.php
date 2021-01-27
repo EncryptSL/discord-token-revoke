@@ -37,19 +37,21 @@ class Client
         curl_setopt($cUrl, CURLOPT_HTTPHEADER, $this->getHeaders());
         curl_setopt($cUrl, CURLOPT_POSTFIELDS, $this->getAccessData());
 
-        $response = curl_exec($cUrl);
+        curl_exec($cUrl);
         $httpcode = curl_getinfo($cUrl, CURLINFO_HTTP_CODE);
 
         if ($httpcode >= 400)
             throw new DiscordException('Expected state code 200 but returned state code ' . $httpcode, $httpcode);
-
-        return bdump($response);
 
         curl_close($cUrl);
 	}
 
 	public function setToken(string $token) 
 	{
+        if(!is_string($token) || strlen($token) === 0) {
+            throw new DiscordException('Token must be string but this is a null or unexpected value !', 405);
+        }
+
 		$this->token = $token;
 		
 		return $this;
