@@ -13,7 +13,7 @@ use stdClass;
 /**
  * @property-read stdClass $config
  */
-final class RevokeExtension extends CompilerExtension 
+final class RevokeExtension extends CompilerExtension
 {
 
     public function getConfigSchema(): Schema
@@ -31,14 +31,13 @@ final class RevokeExtension extends CompilerExtension
         $config = $this->config;
 
         $configData = [
-			'clientId' => $config->clientId,
-			'clientSecret' => $config->clientSecret,
+            'clientId' => $config->clientId,
+            'clientSecret' => $config->clientSecret,
             'api_url' => $config->api_url,
-		];
+        ];
 
-		$builder->addDefinition($this->prefix('discordRevoke'))
-			->setType(DiscordRevoke::class)
+        $builder->addDefinition($this->prefix('discordRevoke'))
+            ->setType(DiscordRevoke::class)
             ->setArguments([$configData]);
     }
-    
-} 
+}
