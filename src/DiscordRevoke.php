@@ -1,18 +1,16 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
 namespace Devtoolcz\Discordtokenrevoke;
 
 use Devtoolcz\Discordtokenrevoke\Curl\Client;
-use Devtoolcz\Discordtokenrevoke\Interfaces\IRevokeRequest;
 
-class DiscordRevoke implements IRevokeRequest
+class DiscordRevoke
 {
-
     private array $config;
 
-    public function __construct(array $config) 
+    public function __construct(array $config)
     {
         $this->config = $config;
     }
@@ -21,5 +19,4 @@ class DiscordRevoke implements IRevokeRequest
     {
         return new Client($this->config['api_url'], $url, (int) $this->config['clientId'], $this->config['clientSecret']);
     }
-    
 }
