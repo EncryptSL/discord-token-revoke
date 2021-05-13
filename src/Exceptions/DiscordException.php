@@ -6,6 +6,6 @@ namespace Devtoolcz\Discordtokenrevoke\Exceptions;
 
 use RuntimeException;
 
-class DiscordException extends RuntimeException {
-    
+class DiscordException extends RuntimeException
+{
 }
